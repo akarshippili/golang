@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 
+	"github.com/akarshippili/golang/conditions"
 	"github.com/akarshippili/golang/functions"
 	"github.com/akarshippili/golang/variables"
 )
@@ -22,4 +23,7 @@ func main() {
 
 	fmt.Println(functions.Sum(1, 2, 3))
 	fmt.Println(functions.Sum(-3, -2, -1, 0, 1, 2, 3))
+
+	conditions.PrintEvenOdd(1)
+	conditions.PrintEvenOdd(2)
 }

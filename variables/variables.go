@@ -15,6 +15,7 @@ var (
 	TestVariable = 10
 )
 
+// first letter should be in caps if you want to access out-side package
 func Testing() {
 	fmt.Println(name, course, module, clip, pi, c)
 	fmt.Println("name type: ", reflect.TypeOf(name))
