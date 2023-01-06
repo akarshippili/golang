@@ -26,4 +26,7 @@ func main() {
 
 	conditions.PrintEvenOdd(1)
 	conditions.PrintEvenOdd(2)
+
+	fmt.Println("apple's color:", conditions.GetFruitColor("apple"))
+	fmt.Println("mango's color:", conditions.GetFruitColor("mango"))
 }
