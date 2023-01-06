@@ -8,13 +8,14 @@ import (
 
 // package level variables
 var (
-	name   string // initilizes with empty string
-	course string = "getting started with go"
-	module int    // initilizes with zero
-	clip   = 2    // type is infered as int
+	name         string // initilizes with empty string
+	course       string = "getting started with go"
+	module       int    // initilizes with zero
+	clip         = 2    // type is infered as int
+	TestVariable = 10
 )
 
-func testing() {
+func Testing() {
 	fmt.Println(name, course, module, clip)
 	fmt.Println("name type: ", reflect.TypeOf(name))
 	fmt.Println("clip type: ", reflect.TypeOf(clip))

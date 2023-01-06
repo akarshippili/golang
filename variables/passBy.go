@@ -2,16 +2,22 @@ package variables
 
 import "fmt"
 
-func test() {
+func Test() {
 	name := "test"
 
 	fmt.Println("int test")
 	fmt.Println(name, &name)
 
-	test2(name)
+	Test2(name)
+	Test3(&name)
 }
 
-func test2(name string) {
+func Test2(name string) {
 	fmt.Println("in test2")
 	fmt.Println(name, &name)
+}
+
+func Test3(ptr *string) {
+	fmt.Println("in test3")
+	fmt.Println(*ptr, ptr)
 }
