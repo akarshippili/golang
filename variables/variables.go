@@ -16,7 +16,7 @@ var (
 )
 
 func Testing() {
-	fmt.Println(name, course, module, clip)
+	fmt.Println(name, course, module, clip, pi, c)
 	fmt.Println("name type: ", reflect.TypeOf(name))
 	fmt.Println("clip type: ", reflect.TypeOf(clip))
 
