@@ -29,4 +29,6 @@ func main() {
 
 	fmt.Println("apple's color:", conditions.GetFruitColor("apple"))
 	fmt.Println("mango's color:", conditions.GetFruitColor("mango"))
+
+	conditions.TryRead()
 }
