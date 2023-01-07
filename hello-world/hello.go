@@ -5,6 +5,7 @@ import (
 
 	"github.com/akarshippili/golang/conditions"
 	"github.com/akarshippili/golang/functions"
+	"github.com/akarshippili/golang/loops"
 	"github.com/akarshippili/golang/variables"
 )
 
@@ -31,4 +32,7 @@ func main() {
 	fmt.Println("mango's color:", conditions.GetFruitColor("mango"))
 
 	conditions.TryRead()
+
+	loops.CountDown(10)
+	loops.PrintArray([]string{"learn go", "networking tcp", "revise design patterns", "leetcode daliy question and contest"})
 }
