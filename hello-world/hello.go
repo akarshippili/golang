@@ -6,6 +6,7 @@ import (
 	"github.com/akarshippili/golang/conditions"
 	"github.com/akarshippili/golang/functions"
 	"github.com/akarshippili/golang/lists"
+	"github.com/akarshippili/golang/loops"
 	"github.com/akarshippili/golang/variables"
 )
 
@@ -34,4 +35,7 @@ func main() {
 	conditions.TryRead()
 
 	lists.TestLists()
+  
+	loops.CountDown(10)
+	loops.PrintArray([]string{"learn go", "networking tcp", "revise design patterns", "leetcode daliy question and contest"})
 }
