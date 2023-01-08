@@ -5,6 +5,7 @@ import (
 
 	"github.com/akarshippili/golang/conditions"
 	"github.com/akarshippili/golang/functions"
+	"github.com/akarshippili/golang/lists"
 	"github.com/akarshippili/golang/variables"
 )
 
@@ -31,4 +32,6 @@ func main() {
 	fmt.Println("mango's color:", conditions.GetFruitColor("mango"))
 
 	conditions.TryRead()
+
+	lists.TestLists()
 }
