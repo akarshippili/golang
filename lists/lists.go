@@ -29,6 +29,8 @@ func TestLists() {
 	}
 	fmt.Printf("Addr: %p.\nLenght of slice is %d.\ncapacity of cources is %d.\n", &courses, len(courses), cap(courses))
 
+	// if under laying array is full go doubles the current cap
+	// 4 -> 8, 5 -> 10
 	courses = append(courses, "Kubernates by nigel poulton")
 	fmt.Printf("Addr: %p.\nLenght of slice is %d.\ncapacity of cources is %d.\n", &courses, len(courses), cap(courses))
 
