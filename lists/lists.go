@@ -1,6 +1,8 @@
 package lists
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func TestLists() {
 	// array - fixed size like arrays in java
@@ -23,11 +25,17 @@ func TestLists() {
 		"AWS by java techie",
 		"Networking Fundamentals",
 		"Go Web Applications, Go net, syscall packages",
-		"Kubernates or K8s",
+		"Kubernates or K8s by nana",
 	}
-	fmt.Printf("Lenght of slice is %d.\ncapacity of cources is %d.\n", len(courses), cap(courses))
+	fmt.Printf("Addr: %p.\nLenght of slice is %d.\ncapacity of cources is %d.\n", &courses, len(courses), cap(courses))
+
+	courses = append(courses, "Kubernates by nigel poulton")
+	fmt.Printf("Addr: %p.\nLenght of slice is %d.\ncapacity of cources is %d.\n", &courses, len(courses), cap(courses))
 
 	for index, course := range courses {
 		fmt.Printf("%d. %s.\n", index, course)
 	}
+
+	// slice
+	fmt.Println(courses[1:3])
 }
