@@ -9,6 +9,7 @@ import (
 	"github.com/akarshippili/golang/lists"
 	"github.com/akarshippili/golang/loops"
 	"github.com/akarshippili/golang/models"
+	"github.com/akarshippili/golang/maps"
 	"github.com/akarshippili/golang/variables"
 )
 
@@ -50,4 +51,8 @@ func main() {
 
 	fmt.Println("type: ", reflect.TypeOf(goCourse), "course: ", goCourse)
 
+	loops.CountDown(3)
+	loops.PrintArray([]string{"learn go", "networking tcp", "revise design patterns", "leetcode daliy question and contest"})
+
+	maps.TestMaps()
 }
