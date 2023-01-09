@@ -2,11 +2,13 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 
 	"github.com/akarshippili/golang/conditions"
 	"github.com/akarshippili/golang/functions"
 	"github.com/akarshippili/golang/lists"
 	"github.com/akarshippili/golang/loops"
+	"github.com/akarshippili/golang/models"
 	"github.com/akarshippili/golang/variables"
 )
 
@@ -35,7 +37,17 @@ func main() {
 	conditions.TryRead()
 
 	lists.TestLists()
-  
+
 	loops.CountDown(10)
 	loops.PrintArray([]string{"learn go", "networking tcp", "revise design patterns", "leetcode daliy question and contest"})
+
+	// goCourse := new(structs.Course)
+	goCourse := models.Course{
+		Author: "akarsh",
+		Level:  "beginner",
+		Rating: 4.26,
+	}
+
+	fmt.Println("type: ", reflect.TypeOf(goCourse), "course: ", goCourse)
+
 }
