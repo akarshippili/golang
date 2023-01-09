@@ -5,11 +5,12 @@ import (
 	"reflect"
 
 	"github.com/akarshippili/golang/conditions"
+	ds "github.com/akarshippili/golang/datastructures"
 	"github.com/akarshippili/golang/functions"
 	"github.com/akarshippili/golang/lists"
 	"github.com/akarshippili/golang/loops"
-	"github.com/akarshippili/golang/models"
 	"github.com/akarshippili/golang/maps"
+	"github.com/akarshippili/golang/models"
 	"github.com/akarshippili/golang/variables"
 )
 
@@ -55,4 +56,6 @@ func main() {
 	loops.PrintArray([]string{"learn go", "networking tcp", "revise design patterns", "leetcode daliy question and contest"})
 
 	maps.TestMaps()
+
+	ds.BtreeTest()
 }
