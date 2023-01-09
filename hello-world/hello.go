@@ -7,6 +7,7 @@ import (
 	"github.com/akarshippili/golang/functions"
 	"github.com/akarshippili/golang/lists"
 	"github.com/akarshippili/golang/loops"
+	"github.com/akarshippili/golang/maps"
 	"github.com/akarshippili/golang/variables"
 )
 
@@ -35,7 +36,9 @@ func main() {
 	conditions.TryRead()
 
 	lists.TestLists()
-  
-	loops.CountDown(10)
+
+	loops.CountDown(3)
 	loops.PrintArray([]string{"learn go", "networking tcp", "revise design patterns", "leetcode daliy question and contest"})
+
+	maps.TestMaps()
 }
