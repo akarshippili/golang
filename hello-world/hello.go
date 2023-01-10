@@ -3,7 +3,9 @@ package main
 import (
 	"fmt"
 	"reflect"
+	"sync"
 
+	"github.com/akarshippili/golang/concurrency"
 	"github.com/akarshippili/golang/conditions"
 	ds "github.com/akarshippili/golang/datastructures"
 	"github.com/akarshippili/golang/functions"
@@ -58,4 +60,20 @@ func main() {
 	maps.TestMaps()
 
 	ds.BtreeTest()
+
+	var wg sync.WaitGroup
+	wg.Add(2)
+
+	go func() {
+		concurrency.One()
+		wg.Done()
+	}()
+
+	go func() {
+		concurrency.Two()
+		wg.Done()
+	}()
+
+	wg.Wait()
+	fmt.Println("main goroutine exiting")
 }
