@@ -7,6 +7,7 @@ import (
 
 	"github.com/akarshippili/golang/concurrency"
 	"github.com/akarshippili/golang/conditions"
+	"github.com/akarshippili/golang/datastructures"
 	ds "github.com/akarshippili/golang/datastructures"
 	"github.com/akarshippili/golang/functions"
 	"github.com/akarshippili/golang/lists"
@@ -54,9 +55,6 @@ func main() {
 
 	fmt.Println("type: ", reflect.TypeOf(goCourse), "course: ", goCourse)
 
-	loops.CountDown(3)
-	loops.PrintArray([]string{"learn go", "networking tcp", "revise design patterns", "leetcode daliy question and contest"})
-
 	maps.TestMaps()
 
 	ds.BtreeTest()
@@ -76,4 +74,18 @@ func main() {
 
 	wg.Wait()
 	fmt.Println("main goroutine exiting")
+
+	uf := datastructures.GetUnionFind(10)
+
+	uf.Merge(0, 1)
+	uf.Merge(3, 1)
+
+	uf.Merge(2, 4)
+	uf.Merge(2, 6)
+	uf.Merge(2, 8)
+	uf.Merge(1, 1)
+
+	fmt.Println("num of components", uf.GetNumOfComp())
+	fmt.Println("are 2 and 1 connected", uf.IsConnected(1, 2))
+	fmt.Println("are 2 and 8 connected", uf.IsConnected(8, 2))
 }
