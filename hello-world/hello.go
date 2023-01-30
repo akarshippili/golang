@@ -9,6 +9,7 @@ import (
 	"github.com/akarshippili/golang/conditions"
 	"github.com/akarshippili/golang/datastructures"
 	ds "github.com/akarshippili/golang/datastructures"
+	"github.com/akarshippili/golang/datastructures/leetcode"
 	"github.com/akarshippili/golang/functions"
 	"github.com/akarshippili/golang/lists"
 	"github.com/akarshippili/golang/loops"
@@ -88,4 +89,6 @@ func main() {
 	fmt.Println("num of components", uf.GetNumOfComp())
 	fmt.Println("are 2 and 1 connected", uf.IsConnected(1, 2))
 	fmt.Println("are 2 and 8 connected", uf.IsConnected(8, 2))
+
+	leetcode.Tribonacci(10)
 }
