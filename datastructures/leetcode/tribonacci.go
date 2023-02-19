@@ -18,7 +18,7 @@ func Tribonacci(n int) int {
 	if !ok {
 		return val
 	}
-	val = tribonacci(n-1) + tribonacci(n-2) + tribonacci(n-2)
+	val = Tribonacci(n-1) + Tribonacci(n-2) + Tribonacci(n-2)
 	cache[n] = val
 	return cache[n]
 }
