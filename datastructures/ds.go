@@ -35,6 +35,8 @@ func BtreeTest() {
 	fmt.Println(node, node.Left, node.Right)
 	fmt.Println(unsafe.Sizeof(node), unsafe.Sizeof(ptrnode))
 
+	fmt.Println("Addr of temp: ", &temp)
+
 	node.Left = &temp
 	fmt.Println(node, node.Left, node.Right)
 
