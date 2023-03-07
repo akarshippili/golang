@@ -46,6 +46,9 @@ func main() {
 		width:  10,
 		length: 12,
 	}
+
+	fmt.Println("area: ", rectangle.area())
+	fmt.Println("perimeter: ", rectangle.perimeter())
 	printShapeDetails(&rectangle)
 
 	circle := Circle{
