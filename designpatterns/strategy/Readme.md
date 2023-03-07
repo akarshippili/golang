@@ -31,10 +31,24 @@ we have copuling between the classes.
 It's all about encapsulating out the behaviour into a class. And Composition over Inheriatance.
 <br>
 
+For example, we have different kind of ducks which have differnt flying behaviour:
+1. Normal duck. -> Normal Flying Behaviour
+2. Wodden duck. -> No Flying Behaviour
+3. Rubber duck. -> No Flying Behaviour
+
+so, we encapsulate out the different flying behaviour into differnet classes.
+
 ### Composition Over Inheriatance
 when you inherit the behaviour is set statically at compile time. which is highly coupled and not flexable. Where as when you extend the behaviour using composition at you are not coupled to anything and we can change the behaviour dynamically at runtime. 
 
 Which also follows open/close principle we can later add new behaviours without even touching the exisiting code. which leads to few bugs.
+
+### Dependency Inversion Principle
+Higher-level components should not depend on lower-level components insted both higher ans lower-level components depends on abstractions. which leads to loosly-coupled systems.
+
+Here in our example Duck is higher level-component and the flying behaviour is the lower-level component. 
+So, both Duck and all the different flying behaviours dependent on abstraction. (FlyingBehaviour)
+
 
 ### lets see a example implementation of strategy design pattern.
 
@@ -88,3 +102,141 @@ func (flyBehavior FlyRocketPowred) Fly() {
 	fmt.Println("Flying With Rocket Powered Wings")
 }
 ```
+
+Similar to FlyBehaviour we have encapsulated out the QuackBehaviour
+
+
+QuackBehavior Interface/Abstraction on which both the lower level components (different implemntaion of QuackBehaviour and Duck depends.)
+```
+package quack
+
+type QuackBehavior interface {
+	Quack()
+}
+
+```
+
+QuackingBehavior
+
+```
+package quack
+
+import "fmt"
+
+type QuackingBehavior struct{}
+
+func (quack QuackingBehavior) Quack() {
+	fmt.Println("Quack")
+}
+```
+
+MuteBehavior
+```
+package quack
+
+import "fmt"
+
+type MuteBehavior struct{}
+
+func (quack MuteBehavior) Quack() {
+	fmt.Println("I can't quack")
+}
+```
+
+SqueakBehavior
+```
+package quack
+
+import "fmt"
+
+type SqueakBehavior struct{}
+
+func (quack SqueakBehavior) Quack() {
+	fmt.Println("Squeak squeak!!!")
+}
+```
+
+Here is the Duck (higher-level component).
+which depends on abstraction, and extends the behaviour using composition and delegation.
+
+```
+package duck
+
+import (
+	"github.com/akarshippili/golang/designpatterns/strategy/fly"
+	"github.com/akarshippili/golang/designpatterns/strategy/quack"
+)
+
+type Duck struct {
+	FlyBehavior   fly.FlyBehavior
+	QuackBehavior quack.QuackBehavior
+}
+
+func (duck *Duck) SetFlyingBehavior(fly fly.FlyBehavior) {
+	duck.FlyBehavior = fly
+}
+
+func (duck *Duck) SetQuackingBehavior(quack quack.QuackBehavior) {
+	duck.QuackBehavior = quack
+}
+
+func (duck *Duck) Behave() {
+	duck.QuackBehavior.Quack()
+	duck.QuackBehavior.Quack()
+	duck.FlyBehavior.Fly()
+}
+```
+
+
+### main.go
+
+```
+package main
+
+import (
+	"github.com/akarshippili/golang/designpatterns/strategy/duck"
+	"github.com/akarshippili/golang/designpatterns/strategy/fly"
+	"github.com/akarshippili/golang/designpatterns/strategy/quack"
+)
+
+func main() {
+
+	duck := duck.Duck{
+		FlyBehavior:   fly.FlyWithWings{},
+		QuackBehavior: quack.QuackingBehavior{},
+	}
+	duck.Behave()
+
+	// changing the flyBehaviour and quackBehaviour at runtime.
+	duck.SetFlyingBehavior(fly.FlyNoWay{})
+	duck.SetQuackingBehavior(quack.MuteBehavior{})
+	duck.Behave()
+
+	duck.SetFlyingBehavior(fly.FlyRocketPowred{})
+	duck.SetQuackingBehavior(quack.SqueakBehavior{})
+	duck.Behave()
+}
+
+```
+
+### Output:
+
+```
+Quack
+Quack
+Flying with wings
+I can't quack
+I can't quack
+I can't fly
+Squeak squeak!!!
+Squeak squeak!!!
+Flying With Rocket Powered Wings
+```
+
+## References:
+1. Head First Design Patterns Book
+2. https://www.youtube.com/watch?v=yjZsAl13trk
+
+### Note:
+1. This is my understanding on strategy design pattern.
+2. Pls, feel free to comment any suggestions.
