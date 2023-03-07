@@ -2,8 +2,8 @@ package quack
 
 import "fmt"
 
-type QuackBehavior struct{}
+type QuackingBehavior struct{}
 
-func (quack QuackBehavior) Quack() {
+func (quack QuackingBehavior) Quack() {
 	fmt.Println("Quack")
 }

@@ -1,5 +1,5 @@
 package fly
 
-type Fly interface {
+type FlyBehavior interface {
 	Fly()
 }

@@ -1,5 +1,5 @@
 package quack
 
-type Quack interface {
+type QuackBehavior interface {
 	Quack()
 }

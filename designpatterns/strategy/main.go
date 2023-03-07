@@ -9,8 +9,8 @@ import (
 func main() {
 
 	duck := duck.Duck{
-		Fly:   fly.FlyWithWings{},
-		Quack: quack.QuackBehavior{},
+		FlyBehavior:   fly.FlyWithWings{},
+		QuackBehavior: quack.QuackingBehavior{},
 	}
 	duck.Behave()
 

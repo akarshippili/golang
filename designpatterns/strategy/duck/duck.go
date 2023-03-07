@@ -6,20 +6,20 @@ import (
 )
 
 type Duck struct {
-	Fly   fly.Fly
-	Quack quack.Quack
+	FlyBehavior   fly.FlyBehavior
+	QuackBehavior quack.QuackBehavior
 }
 
-func (duck *Duck) SetFlyingBehavior(fly fly.Fly) {
-	duck.Fly = fly
+func (duck *Duck) SetFlyingBehavior(fly fly.FlyBehavior) {
+	duck.FlyBehavior = fly
 }
 
-func (duck *Duck) SetQuackingBehavior(quack quack.Quack) {
-	duck.Quack = quack
+func (duck *Duck) SetQuackingBehavior(quack quack.QuackBehavior) {
+	duck.QuackBehavior = quack
 }
 
 func (duck *Duck) Behave() {
-	duck.Quack.Quack()
-	duck.Quack.Quack()
-	duck.Fly.Fly()
+	duck.QuackBehavior.Quack()
+	duck.QuackBehavior.Quack()
+	duck.FlyBehavior.Fly()
 }

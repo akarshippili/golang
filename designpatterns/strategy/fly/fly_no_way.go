@@ -4,6 +4,6 @@ import "fmt"
 
 type FlyNoWay struct{}
 
-func (flyBehavivor FlyNoWay) Fly() {
+func (flyBehavior FlyNoWay) Fly() {
 	fmt.Println("I can't fly")
 }
