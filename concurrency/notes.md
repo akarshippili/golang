@@ -2,7 +2,7 @@
 1. fan-in model
 2. fan-out model
 
-### whole idea is that we can balance out level of concurrency to many app effecient.
+### whole idea is that we can balance out level of concurrency to make our app/programs effecient.
 <br/>
 
 ### In go workers -> goroutines and they use channels to communicate to implement concurrency.
