@@ -1,23 +1,27 @@
 package reciver
 
+import "fmt"
+
 type Light struct {
-	brightness int
+	Brightness int
 }
 
 func (light *Light) On() {
-	light.brightness = 10
+	light.Brightness = 10
+	fmt.Println("Turned On light")
 }
 
 func (light *Light) Off() {
-	light.brightness = 0
+	light.Brightness = 0
+	fmt.Println("Turned Off light")
 }
 
 func (light *Light) Increase() {
-	light.brightness = (light.brightness + 1) % 10
+	light.Brightness = (light.Brightness + 1) % 10
 }
 
 func (light *Light) Decrease() {
-	if light.brightness > 0 {
-		light.brightness = (light.brightness - 1)
+	if light.Brightness > 0 {
+		light.Brightness = (light.Brightness - 1)
 	}
 }

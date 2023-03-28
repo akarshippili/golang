@@ -3,13 +3,13 @@ package command
 import "github.com/akarshippili/golang/designpatterns/command/reciver"
 
 type LightOnCommand struct {
-	light reciver.Light
+	Light reciver.Light
 }
 
 func (command *LightOnCommand) Execute() {
-	command.light.On()
+	command.Light.On()
 }
 
 func (command *LightOnCommand) Undo() {
-	command.light.Off()
+	command.Light.Off()
 }
