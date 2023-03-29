@@ -1,23 +1,31 @@
 package reciver
 
+import "fmt"
+
 type Fan struct {
-	speed int
+	Speed int
 }
 
 func (fan *Fan) On() {
-	fan.speed = 3
+	fan.Speed = 3
+	fmt.Println("Turned On Fan")
 }
 
 func (fan *Fan) Off() {
-	fan.speed = 0
+	fan.Speed = 0
+	fmt.Println("Turned Off Fan")
 }
 
 func (fan *Fan) IncreaseSpeed() {
-	fan.speed = (fan.speed + 1) % 5
+	if fan.Speed < 5 {
+		fan.Speed = fan.Speed + 1
+		fmt.Printf("increased speed to %d \n", fan.Speed)
+	}
 }
 
 func (fan *Fan) DecreaseSpeed() {
-	if fan.speed > 0 {
-		fan.speed = (fan.speed - 1)
+	if fan.Speed > 0 {
+		fan.Speed = (fan.Speed - 1)
+		fmt.Printf("decreased speed to %d \n", fan.Speed)
 	}
 }

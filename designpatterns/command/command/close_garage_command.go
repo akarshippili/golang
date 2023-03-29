@@ -3,13 +3,13 @@ package command
 import "github.com/akarshippili/golang/designpatterns/command/reciver"
 
 type CloseGarageCommand struct {
-	garageDoor reciver.GarageDoor
+	GarageDoor reciver.GarageDoor
 }
 
 func (command *CloseGarageCommand) Execute() {
-	command.garageDoor.Close()
+	command.GarageDoor.Close()
 }
 
 func (command *CloseGarageCommand) Undo() {
-	command.garageDoor.Open()
+	command.GarageDoor.Open()
 }

@@ -17,13 +17,15 @@ func (stereo *Stereo) Off() {
 }
 
 func (stereo *Stereo) IncreaseVolume() {
-	stereo.Volume = (stereo.Volume + 1) % 5
-	fmt.Printf("increased volume to %d", stereo.Volume)
+	if stereo.Volume < 5 {
+		stereo.Volume = (stereo.Volume + 1)
+	}
+	fmt.Printf("increased volume to %d \n", stereo.Volume)
 }
 
 func (stereo *Stereo) DecreaseVolume() {
 	if stereo.Volume > 0 {
 		stereo.Volume = (stereo.Volume - 1)
-		fmt.Printf("decreased volume to %d", stereo.Volume)
+		fmt.Printf("decreased volume to %d \n", stereo.Volume)
 	}
 }
