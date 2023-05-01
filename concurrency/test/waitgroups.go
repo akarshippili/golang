@@ -16,4 +16,8 @@ func main() {
 	}()
 
 	wg.Wait()
+
+	ChannelTest()
+	SelectChannelTest()
+	LoopThroughChannel()
 }
