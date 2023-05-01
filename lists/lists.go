@@ -5,8 +5,8 @@ import (
 )
 
 func TestLists() {
-	// array - fixed size like arrays in java
-	// slices - resizeable like arrayList
+	// array - fixed size like arrays in java, pass by value
+	// slices - resizeable like arrayList, pass by reference
 
 	// one way to declare
 	// courses := make([]string, 5, 10)
